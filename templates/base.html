@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Заголовок страницы</title>
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" type="text/css">
+</head>
+</head>
+<body>
+<h1 align="center">СПИСОК ВСЕХ КАРТ</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>User ID</th>
+            <th>User</th>
+            <th>Card Number</th>
+            <th>Create Date</th>
+            <th>Balance</th>
+            <th>Status</th>
+            <th>Category</th>
+            <th>Freeze time</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for card in clubcard %}
+
+            <tr>
+                <th scope="row">{{card.id}}</th>
+                <td>{{card.user}}</td>
+                <td><a href="{{card.get_absolute_url}}">{{card.card_number}}</a></td>
+                <td>{{card.create_date}}</td>
+                <td>{{card.balance}}</td>
+                <td>{{card.status}}</td>
+                <td>{{card.category}}</td>
+                <td>{{card.freeze_time}}</td>
+            </tr>
+
+        {% endfor %}
+    </tbody>
+</table>
+
+</body>
+</html>

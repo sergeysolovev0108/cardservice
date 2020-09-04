@@ -1,0 +1,50 @@
+
+{% load static %}
+
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Заголовок страницы</title>
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" type="text/css">
+</head>
+</head>
+<body>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>User ID</th>
+            <th>User</th>
+            <th>Card Number</th>
+            <th>Create Date</th>
+            <th>Balance</th>
+            <th>Status</th>
+            <th>Category</th>
+            <th>Freeze time</th>
+        </tr>
+    </thead>
+    <tbody>
+
+            <tr>
+                <th scope="row">{{clubcard.id}}</th>
+                <td>{{clubcard.user}}</td>
+                <td><a href="{{clubcard.get_absolute_url}}">{{clubcard.card_number}}</a></td>
+                <td>{{clubcard.create_date}}</td>
+                <td>{{clubcard.balance}}</td>
+                <td>{{clubcard.status}}</td>
+                <td>{{clubcard.category}}</td>
+                <td>{{clubcard.freeze_time}}</td>
+            </tr>
+
+    </tbody>
+</table>
+
+
+
+
+
+</body>
+</html>
